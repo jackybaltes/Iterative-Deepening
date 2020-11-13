@@ -1,0 +1,684 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Iterative Deepening</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ntnuerc.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <script src="https://daybrush.com/scenejs/release/latest/dist/scene.min.js"></script>
+		
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <script src="js/ntnu.js"></script>
+    </head>
+    <body>
+        <div class="reveal">
+        <div class="slides">
+            
+<section id="start" data-state="start">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>Iterative Deepening</h1>
+
+<p>
+      Jacky Baltes<br>
+      National Taiwan Normal University<br>
+      Taipei, Taiwan<br>
+      <a href="mailto:jacky.baltes@ntnu.edu.tw">jacky.baltes@ntnu.edu.tw</a><br>
+</p>
+
+<class 'datetime.date'>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-50cecbed-c6c3-4c40-9b0e-f39fa4b36b75" ><span id="id-50cecbed-c6c3-4c40-9b0e-f39fa4b36b75"><img id="img-id-50cecbed-c6c3-4c40-9b0e-f39fa4b36b75"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-a657ee90-5adc-46a6-bb0f-ab84f963d108" ><span id="id-a657ee90-5adc-46a6-bb0f-ab84f963d108"><img id="img-id-a657ee90-5adc-46a6-bb0f-ab84f963d108" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00003_frag_00001" data-state="slide_00003_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>Search Methods and Iterative Deepening</h1>
+
+<div class="jb-text">
+<ul>
+<li>Depth First Search</li>
+<ul>
+<li>Advantage: Amount of memory grows linearly with the depth of the search</li>
+<li>Disadvantage: May fall into a deep subtree</li>
+<li>Disadvantage: Usually does not find the shallowest/optimal solution</li>
+</ul>
+</li>
+<li>Breadth First Search</li>
+<ul>
+<li>Advantage: Finds shallowest/optimal solution</li>
+<li>Disadvantage: Requires an exponential amount of memory</li>
+</ul>
+</li>
+<li>Hill Climbing Search  Search</li>
+<ul>
+<li>Advantage: Local search proceeds quickly</li>
+<li>Disadvantage: May get stuck in local minimum/maximum. Random restart to avoid</li>
+<li>Disadvantage: Not guaranteed to find shallowest/optimal solution</li>
+</ul>
+</li>
+</ul>
+</div>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-74d35054-bae9-438e-8e3f-83eb9f708447" ><span id="id-74d35054-bae9-438e-8e3f-83eb9f708447"><img id="img-id-74d35054-bae9-438e-8e3f-83eb9f708447"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-98ce0236-f813-41bf-b05a-4592ba3e87a0" ><span id="id-98ce0236-f813-41bf-b05a-4592ba3e87a0"><img id="img-id-98ce0236-f813-41bf-b05a-4592ba3e87a0" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00004_frag_00001" data-state="slide_00004_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>Iterative Deepening</h1>
+
+<div class="jb-text">
+<ul>
+<li></li>
+</ul>
+</div>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-b20d0072-3eae-4b65-a91d-5871771fc088" ><span id="id-b20d0072-3eae-4b65-a91d-5871771fc088"><img id="img-id-b20d0072-3eae-4b65-a91d-5871771fc088"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-a45879d5-d17d-4046-8c40-49e5278d2e96" ><span id="id-a45879d5-d17d-4046-8c40-49e5278d2e96"><img id="img-id-a45879d5-d17d-4046-8c40-49e5278d2e96" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00005_frag_00001" data-state="slide_00005_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>Iterative Deepening</h1>
+
+<div class="jb-text">
+<ul>
+<li>Combines depth first and breadth first search</li>
+<ul>
+<li>Advantage: Finds optimal/shallowest solution</li>
+<li>Advantage: Amount of memory grows linearly with the depth of the search</li>
+<li>Advantage: Does not fall into a deep subtree</li>
+<li>Disadvantage: Increase in runtime. Iterative deepening is slower</li>
+</ul>
+</li>
+</ul>
+</div>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-52a42a4b-5af2-4635-a7c7-47524dc2acdd" ><span id="id-52a42a4b-5af2-4635-a7c7-47524dc2acdd"><img id="img-id-52a42a4b-5af2-4635-a7c7-47524dc2acdd"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-9833b1f5-1ea4-48ae-b6ee-7acb28f20c0c" ><span id="id-9833b1f5-1ea4-48ae-b6ee-7acb28f20c0c"><img id="img-id-9833b1f5-1ea4-48ae-b6ee-7acb28f20c0c" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00006_frag_00001" data-state="slide_00006_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>Iterative Deepening</h1>
+
+<div class="jb-text">
+<ul>
+<li>Impose a depth limit for depth first search</li>
+<li>Obvious problem is that we cut out parts of the search space</li>
+<li>If the solution is in the part that we cut out, then the algorithm 
+will fail to find it</li>
+<li>If we do not find a solution, then we increase the depth limit</li>
+<li>Trading off runtime for memory efficiency</li>
+</ul>
+</div>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-14309cc0-14ab-404d-bbb7-46423cc34045" ><span id="id-14309cc0-14ab-404d-bbb7-46423cc34045"><img id="img-id-14309cc0-14ab-404d-bbb7-46423cc34045"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-6f7d68bb-72b1-4d3b-a67f-d32fa06b1f07" ><span id="id-6f7d68bb-72b1-4d3b-a67f-d32fa06b1f07"><img id="img-id-6f7d68bb-72b1-4d3b-a67f-d32fa06b1f07" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00007_frag_00001" data-state="slide_00007_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>Runtime Overhead of Iterative Deepening</h1>
+
+<div class="jb-text">
+<ul>
+<li>How much slower will our search be?</li>
+<li>Simplest case is a binary tree</li>
+<li>Branching factor \(b=2\), depth of the search \( d \)</li>
+<li>Number of leave nodes \( n_l \) at level \( l \), that is 
+\[
+  n_l = 2^{l}
+\]
+</li>
+<li>Number of nodes searched in breadth first search \( n_e \) is solution is at level \( l \) is
+\[
+  \sum_{i=0}^{l} 2^{i} = 2^{l+1}-1
+\] 
+</li>
+<li>Number of nodes expanded in Iterative Deepening
+\[
+  \mbox{Limit 1}: (2^1 - 1) \\
+  \mbox{Limit 2}: (2^2 - 1) \\
+  \mbox{Limit 3}: (2^3 - 1) \\
+  ...
+\]
+</li>
+<li>
+Each level will be expanded l - i times
+\[
+  n_e = \sum_{i=0}^{l} (l-i)*2^{i} \approx 2^{l+1}
+\]
+</li>
+<li>Compare that to the cost of breadth first search</li>
+\[
+  2^{l+1} - 1
+\]
+<li>
+Even with a small branching factor of 2, 50% of the nodes are leaf nodes.
+</li>
+<li>
+So even if we expand the nodes in the upper layers of the tree often (worst case it would be l times for the root node),
+it will only add a small portion to the runtime.
+</li>
+</ul>
+</div>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-78eba0fa-a616-45f4-a96a-1e20f050e5d6" ><span id="id-78eba0fa-a616-45f4-a96a-1e20f050e5d6"><img id="img-id-78eba0fa-a616-45f4-a96a-1e20f050e5d6"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-b040e6b3-c429-4647-9ec9-d377d84f3b99" ><span id="id-b040e6b3-c429-4647-9ec9-d377d84f3b99"><img id="img-id-b040e6b3-c429-4647-9ec9-d377d84f3b99" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00008_frag_00001" data-state="slide_00008_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+<div class="jb-input jb-render jb-code" style="text-align:center">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-input-code jb-render">
+<div class="highlight" style="background: #f8f8f8; color:#101010;display=inline-block;"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">iddfs</span>( b, d ):
+  <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+  <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>( d<span style="color: #666666">+1</span> ):
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>( i<span style="color: #666666">+1</span> ):
+      <span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #008000">sum</span> <span style="color: #666666">+</span> dfs(b,j)
+  <span style="color: #408080; font-style: italic">#print(f&#39;IDDFS b={b}, d={d}, expands {sum} nodes&#39; )</span>
+  <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">sum</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">dfs</span>( b, d ):
+    exp <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>( d ):
+      <span style="color: #408080; font-style: italic">#print( f&#39;Expand all nodes at level {j}, {b**j} nodes&#39;)</span>
+      exp <span style="color: #666666">=</span> exp <span style="color: #666666">+</span> b <span style="color: #666666">**</span> j
+    <span style="color: #408080; font-style: italic">#print( f&#39;Depth first search to level {d} expands {exp} nodes&#39;)</span>
+    <span style="color: #008000; font-weight: bold">return</span> exp
+
+b,d <span style="color: #666666">=</span> <span style="color: #666666">2</span>,<span style="color: #666666">4</span>
+<span style="color: #008000">print</span>( <span style="color: #BA2121">f&#39;branching factor </span><span style="color: #BB6688; font-weight: bold">{</span>b<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121"> and depth </span><span style="color: #BB6688; font-weight: bold">{</span>d<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">, DFS </span><span style="color: #BB6688; font-weight: bold">{</span>dfs(b,d)<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121"> IDDFS </span><span style="color: #BB6688; font-weight: bold">{</span>iddfs(b,d)<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">&#39;</span>)
+</pre></div>
+
+</div><!-- end of jb-input-code jb-render -->
+
+</div>
+<div class="jb-print jb-render">
+<div class="jb-output jb-render code" style="text-align:center">
+<div class="jb-stdout code" style="display:inline-block; width:90%">
+<pre >
+branching factor 2 and depth 4, DFS 15 IDDFS 42
+</pre>
+</div>
+</div>
+
+</div><!-- end of jb-print jb-render -->
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-15e1c0f3-d959-4c52-98d6-1d137ebc20e4" ><span id="id-15e1c0f3-d959-4c52-98d6-1d137ebc20e4"><img id="img-id-15e1c0f3-d959-4c52-98d6-1d137ebc20e4"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-def3dfed-1f2b-45e3-9eb1-4f173e07042b" ><span id="id-def3dfed-1f2b-45e3-9eb1-4f173e07042b"><img id="img-id-def3dfed-1f2b-45e3-9eb1-4f173e07042b" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00009_frag_00001" data-state="slide_00009_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+<div class="jb-input jb-render jb-code" style="text-align:center">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-input-code jb-render">
+<div class="highlight" style="background: #f8f8f8; color:#101010;display=inline-block;"><pre style="line-height: 125%"><span></span>fig<span style="color: #666666">=</span>plt<span style="color: #666666">.</span>figure(dpi<span style="color: #666666">=200</span>)
+ax1 <span style="color: #666666">=</span> fig<span style="color: #666666">.</span>add_subplot(<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">1</span>)
+
+bs<span style="color: #666666">=</span>np<span style="color: #666666">.</span>arange(<span style="color: #666666">10</span>,<span style="color: #666666">24</span>,<span style="color: #666666">3</span>)
+
+xs <span style="color: #666666">=</span> np<span style="color: #666666">.</span>arange(<span style="color: #666666">2</span>,<span style="color: #666666">10</span>)
+
+ydfs <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(bs), <span style="color: #008000">len</span>(xs)))
+yiddfs <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((<span style="color: #008000">len</span>(bs),<span style="color: #008000">len</span>(xs)))
+
+<span style="color: #008000; font-weight: bold">for</span> bi <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(bs)):
+  b <span style="color: #666666">=</span> bs[bi]
+  <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(xs)):
+    ydfs[bi,i] <span style="color: #666666">=</span> dfs(b,i)
+    yiddfs[bi,i] <span style="color: #666666">=</span> iddfs(b,i)
+
+<span style="color: #008000; font-weight: bold">for</span> bi <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(bs)):
+  ax1<span style="color: #666666">.</span>plot(xs, ydfs[bi], label<span style="color: #666666">=</span><span style="color: #BA2121">f&#39;dfs b=</span><span style="color: #BB6688; font-weight: bold">{</span>bs[bi]<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">&#39;</span> )
+  ax1<span style="color: #666666">.</span>plot(xs, yiddfs[bi], label<span style="color: #666666">=</span><span style="color: #BA2121">f&#39;iddfs b=</span><span style="color: #BB6688; font-weight: bold">{</span>bs[bi]<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">&#39;</span> )
+ax1<span style="color: #666666">.</span>legend()
+
+ax2 <span style="color: #666666">=</span> fig<span style="color: #666666">.</span>add_subplot(<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">2</span>)
+<span style="color: #008000; font-weight: bold">for</span> bi <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(bs)):
+  ax2<span style="color: #666666">.</span>plot(xs, yiddfs[bi]<span style="color: #666666">/</span>ydfs[bi], label<span style="color: #666666">=</span><span style="color: #BA2121">f&#39;dfs/iddfs b=</span><span style="color: #BB6688; font-weight: bold">{</span>bs[bi]<span style="color: #BB6688; font-weight: bold">}</span><span style="color: #BA2121">&#39;</span> )
+ax2<span style="color: #666666">.</span>legend()
+
+dfsf1 <span style="color: #666666">=</span> addJBFigure( <span style="color: #BA2121">&quot;dfsf1&quot;</span>, <span style="color: #666666">0</span>, <span style="color: #666666">0</span>, fig )
+plt<span style="color: #666666">.</span>close()
+</pre></div>
+
+</div><!-- end of jb-input-code jb-render -->
+
+</div>
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-be2d37b8-e77b-4cce-93e5-e606f8d8a2a4" ><span id="id-be2d37b8-e77b-4cce-93e5-e606f8d8a2a4"><img id="img-id-be2d37b8-e77b-4cce-93e5-e606f8d8a2a4"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-e65b56d7-2293-4b1b-b4d4-6fd2eac5bf84" ><span id="id-e65b56d7-2293-4b1b-b4d4-6fd2eac5bf84"><img id="img-id-e65b56d7-2293-4b1b-b4d4-6fd2eac5bf84" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+<section id="slide_00010_frag_00001" data-state="slide_00010_frag_00001">
+
+
+<!-- Header -->
+  
+
+<!-- Background -->
+
+
+<!-- Slide -->
+<div class="jb-slide">
+
+<div class="jb-output-code jb-render">
+
+<!-- start embedded style -->
+
+<!-- end embedded style -->
+<div class="jb-output jb-render">
+
+<h1>Overhead of Iterative Deepening Methods</h1>
+
+<span id="id-999b4cc0-e73f-4196-bd62-319750f1915a" ><span id="id-999b4cc0-e73f-4196-bd62-319750f1915a"><img id="img-id-999b4cc0-e73f-4196-bd62-319750f1915a"     src="assets/images/dfsf1.svg"/></span>
+</span>
+
+
+<div class="jb-text">
+<ul>
+<li>Even though it may sound like a big waste of runtime (a lot of extra work), the overhead
+for iterative deepening depth first search is dependent on the depth and the branching factor</li>
+<li>Worst case is for small branching factors (e.g., b=2), but for realistic branching factors (b>10)
+the overhead is less than 30%</li>
+<li>For a branching factor of b=22, overhead is only 8%</li>
+</ul>
+</div>
+</div><!-- end of jb-output jb-render -->
+</div><!-- end of jb-output-code jb-render -->
+
+
+</div>
+<!-- Footer -->
+
+<div class="jb-footer-left plain">
+    <span id="id-c3d235fa-61c2-4d91-919a-283ae8976098" ><span id="id-c3d235fa-61c2-4d91-919a-283ae8976098"><img id="img-id-c3d235fa-61c2-4d91-919a-283ae8976098"     src="assets/images/logo.png"/></span>
+</span>
+
+</div>
+<div class="jb-footer-right plain">
+    <span id="id-1ff49f30-bed1-4055-a189-ac67e1d327fa" ><span id="id-1ff49f30-bed1-4055-a189-ac67e1d327fa"><img id="img-id-1ff49f30-bed1-4055-a189-ac67e1d327fa" width="162" height="138"   src="assets/images/robbi.png"/></span>
+</span>
+
+</div>
+
+<aside class="notes">
+
+</aside>
+
+
+
+</section>
+        </div>
+        </div>
+
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                math: {
+                    mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+                    config: 'TeX-AMS_HTML-full',  // See http://docs.mathjax.org/en/latest/config-files.html
+                    // tex2jax: {
+                    //     inlineMath: [['$', '$'], ['\(', '\)']],
+                    //     displayMath: [['$$', '$$'], ['\[', '\]']],
+                    //     processEscapes: true,
+                    //     processEnvironments: true,
+                    //     skipTags: ['script', 'noscript', 'style', 'textarea', 'code', 'pre'],
+                    //     displayAlign: 'center',
+                    // }                
+                },
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/math/math.js', async: true }
+                ]
+            });
+        </script>
+
+        <script>
+            <!-- Assets -->
+var assets = {
+"robbi" : new JBImage( "robbi", "12677", "162", "138", null, null, "assets/images/robbi", "png" ),
+"logo" : new JBImage( "logo", "12033", "0", "0", null, null, "assets/images/logo", "png" ),
+"fira-logo-1" : new JBImage( "fira-logo-1", "93836", "0", "0", null, null, "assets/images/FIRA-logo-1", "png" ),
+"pairLogo" : new JBImage( "pairLogo", "63051", "0", "0", null, null, "assets/images/pairLogo", "png" ),
+"dfsf1" : new JBImage( "dfsf1", "43919", "0", "0", null, null, "assets/images/dfsf1", "svg" ) 
+};
+var assetInstances = {
+    "id-a657ee90-5adc-46a6-bb0f-ab84f963d108": assets["robbi"],
+    "id-98ce0236-f813-41bf-b05a-4592ba3e87a0": assets["robbi"],
+    "id-a45879d5-d17d-4046-8c40-49e5278d2e96": assets["robbi"],
+    "id-9833b1f5-1ea4-48ae-b6ee-7acb28f20c0c": assets["robbi"],
+    "id-6f7d68bb-72b1-4d3b-a67f-d32fa06b1f07": assets["robbi"],
+    "id-b040e6b3-c429-4647-9ec9-d377d84f3b99": assets["robbi"],
+    "id-def3dfed-1f2b-45e3-9eb1-4f173e07042b": assets["robbi"],
+    "id-e65b56d7-2293-4b1b-b4d4-6fd2eac5bf84": assets["robbi"],
+    "id-1ff49f30-bed1-4055-a189-ac67e1d327fa": assets["robbi"],
+    "id-50cecbed-c6c3-4c40-9b0e-f39fa4b36b75": assets["logo"],
+    "id-74d35054-bae9-438e-8e3f-83eb9f708447": assets["logo"],
+    "id-b20d0072-3eae-4b65-a91d-5871771fc088": assets["logo"],
+    "id-52a42a4b-5af2-4635-a7c7-47524dc2acdd": assets["logo"],
+    "id-14309cc0-14ab-404d-bbb7-46423cc34045": assets["logo"],
+    "id-78eba0fa-a616-45f4-a96a-1e20f050e5d6": assets["logo"],
+    "id-15e1c0f3-d959-4c52-98d6-1d137ebc20e4": assets["logo"],
+    "id-be2d37b8-e77b-4cce-93e5-e606f8d8a2a4": assets["logo"],
+    "id-c3d235fa-61c2-4d91-919a-283ae8976098": assets["logo"],
+    "id-999b4cc0-e73f-4196-bd62-319750f1915a": assets["dfsf1"]
+};
+<!-- End of Assets -->
+
+            convertURLs(assetInstances, "smart-path");
+        </script>
+        <script>
+            <!-- Characters -->
+var characters =
+{};
+<!-- End of Characters -->
+
+        </script>
+    </body>
+</html>
